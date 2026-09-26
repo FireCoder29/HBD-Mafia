@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Surprise ✨</title>
+    <link rel="icon" href="images/Logo.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================================
+   RESET
+========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #080711;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        section {
+            min-height: 100vh;
+            position: relative;
+        }
+
+
+        /* =========================================================
+   BACKGROUND
+========================================================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -5;
+
+            background:
+                radial-gradient(circle at 20% 20%,
+                    rgba(255, 120, 190, .13),
+                    transparent 27%),
+                radial-gradient(circle at 80% 70%,
+                    rgba(120, 130, 255, .12),
+                    transparent 30%);
+        }
+
+
+        /* =========================================================
+   STARS
+========================================================= */
+
+        #stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            opacity: .5;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: .15;
+                transform: scale(.7);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.4);
+            }
+        }
+
+
+        /* =========================================================
+   COMMON
+========================================================= */
+
+        .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .primary-btn {
+            border: 1px solid rgba(255, 255, 255, .25);
+            background: rgba(255, 255, 255, .07);
+            color: white;
+
+            padding: 15px 30px;
+
+            border-radius: 50px;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            backdrop-filter: blur(12px);
+
+            transition: .35s ease;
+        }
+
+        .primary-btn:hover {
+            background: white;
+            color: #090714;
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 40px rgba(255, 255, 255, .12);
+        }
+
+
+        /* =========================================================
+   OPENING
+========================================================= */
+
+        #opening {
+            min-height: 100vh;
+        }
+
+        .open-content {
+            width: min(800px, 90%);
+            animation: fadeUp 1.2s ease;
+        }
+
+        .small-title {
+            font-size: 11px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #d7d1df;
+            opacity: .65;
+            margin-bottom: 25px;
+        }
+
+        .open-content h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(48px, 9vw, 100px);
+            line-height: .95;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .open-content p {
+            color: #aaa6b7;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #aaa6b7;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, 8px);
+            }
+        }
+
+
+        /* =========================================================
+   BIRTHDAY
+========================================================= */
+
+        #birthday {
+            padding: 40px 20px;
+        }
+
+        .birthday-content {
+            width: min(850px, 100%);
+        }
+
+        .birthday-label {
+            font-size: 12px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #d9a6c3;
+            opacity: .7;
+        }
+
+        .birthday-content h2 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(58px, 11vw, 130px);
+            line-height: .88;
+            font-weight: 400;
+            margin: 25px 0;
+        }
+
+        .birthday-name {
+            color: #f1a5ca;
+            font-size: clamp(25px, 5vw, 48px);
+        }
+
+        .birthday-description {
+            max-width: 580px;
+            margin: 30px auto 40px;
+            color: #aaa6b7;
+            line-height: 1.9;
+            font-size: 15px;
+        }
+
+
+        /* =========================================================
+   MEMORIES
+========================================================= */
+
+        #memories {
+            padding: 120px 20px 160px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-heading span {
+            font-size: 11px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #d9a6c3;
+            opacity: .7;
+        }
+
+        .section-heading h2 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(45px, 7vw, 70px);
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .timeline {
+            max-width: 1000px;
+            margin: auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+
+            background:
+                linear-gradient(transparent,
+                    rgba(255, 255, 255, .2),
+                    transparent);
+        }
+
+        .memory {
+            width: 50%;
+            padding: 35px 50px;
+            position: relative;
+        }
+
+        .memory:nth-child(odd) {
+            text-align: right;
+        }
+
+        .memory:nth-child(even) {
+            margin-left: 50%;
+            text-align: left;
+        }
+
+        .memory-dot {
+            position: absolute;
+            top: 48px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #f1a5ca;
+
+            box-shadow:
+                0 0 20px #f1a5ca;
+        }
+
+        .memory:nth-child(odd) .memory-dot {
+            right: -5px;
+        }
+
+        .memory:nth-child(even) .memory-dot {
+            left: -5px;
+        }
+
+        .memory-photo {
+            width: 100%;
+            max-width: 390px;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 10px;
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, .5);
+
+            transition: .5s ease;
+        }
+
+        .memory-photo:hover {
+            transform:
+                scale(1.03) rotate(-1deg);
+        }
+
+        .memory h3 {
+            font-family: "DM Serif Display", serif;
+            font-weight: 400;
+            font-size: 29px;
+            margin-top: 20px;
+        }
+
+        .memory p {
+            color: #aaa6b7;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-top: 8px;
+        }
+
+
+        /* =========================================================
+   SPECIAL LETTER SECTION
+========================================================= */
+
+        #letter {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            padding:
+                120px 20px 180px;
+        }
+
+        .letter-area {
+            width: 100%;
+            max-width: 800px;
+
+            position: relative;
+
+            z-index: 10;
+        }
+
+        .letter-label {
+            font-size: 11px;
+            letter-spacing: 5px;
+            color: #e9a9c8;
+            margin-bottom: 15px;
+            opacity: .8;
+        }
+
+        .letter-area h2 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(45px, 7vw, 70px);
+            font-weight: 400;
+
+            position: relative;
+            z-index: 20;
+        }
+
+        .letter-subtitle {
+            color: #aaa6b7;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+
+        /* =========================================================
+   PARTICLES
+========================================================= */
+
+        .letter-particles {
+            position: absolute;
+            inset: 100px 0 0;
+            pointer-events: none;
+        }
+
+        .letter-particles span {
+            position: absolute;
+            color: #f2a7c8;
+            font-size: 20px;
+            opacity: .5;
+
+            animation:
+                floatParticle 4s ease-in-out infinite;
+        }
+
+        .letter-particles span:nth-child(1) {
+            left: 12%;
+            top: 30%;
+        }
+
+        .letter-particles span:nth-child(2) {
+            left: 80%;
+            top: 20%;
+            animation-delay: 1s;
+        }
+
+        .letter-particles span:nth-child(3) {
+            left: 10%;
+            top: 70%;
+            animation-delay: 2s;
+        }
+
+        .letter-particles span:nth-child(4) {
+            right: 10%;
+            top: 65%;
+            animation-delay: .5s;
+        }
+
+        .letter-particles span:nth-child(5) {
+            right: 20%;
+            top: 40%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floatParticle {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0) rotate(0deg);
+                opacity: .25;
+            }
+
+            50% {
+                transform:
+                    translateY(-18px) rotate(15deg);
+                opacity: 1;
+            }
+        }
+
+
+        /* =========================================================
+   ENVELOPE
+========================================================= */
+
+        .special-envelope {
+
+            width: 320px;
+            height: 215px;
+
+            position: relative;
+
+            margin:
+                260px auto 70px;
+
+            perspective: 1000px;
+
+            animation:
+                envelopeFloat 3.5s ease-in-out infinite;
+        }
+
+        @keyframes envelopeFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-9px);
+            }
+        }
+
+
+        /* =========================================================
+   ENVELOPE GLOW
+========================================================= */
+
+        .envelope-glow {
+
+            position: absolute;
+
+            width: 280px;
+            height: 180px;
+
+            left: 20px;
+            top: 25px;
+
+            background: #f29fc6;
+
+            filter: blur(55px);
+
+            opacity: .18;
+
+            border-radius: 50%;
+
+            transition: 1s;
+        }
+
+
+        /* =========================================================
+   ENVELOPE BACK
+========================================================= */
+
+        .envelope-back {
+
+            position: absolute;
+
+            inset: 0;
+
+            background: #e9b0ca;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 30px 70px rgba(0, 0, 0, .45);
+
+            z-index: 1;
+        }
+
+
+        /* =========================================================
+   LETTER PAPER
+========================================================= */
+
+        .special-paper {
+
+            position: absolute;
+
+            width: 290px;
+            height: 330px;
+
+            left: 15px;
+            top: 12px;
+
+            background: #fffafc;
+
+            color: #352a31;
+
+            border-radius: 8px;
+
+            padding:
+                28px 25px;
+
+            text-align: left;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, .25);
+
+            z-index: 2;
+
+            opacity: 0;
+
+            transform:
+                translateY(0);
+
+            transition:
+                transform 1.1s cubic-bezier(.2, .8, .2, 1),
+                opacity .6s ease;
+        }
+
+
+        /* =========================================================
+   PAPER CONTENT
+========================================================= */
+
+        .paper-content {
+
+            height: 100%;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        /* =========================================================
+   PAPER TITLE
+========================================================= */
+
+        .paper-top {
+
+            font-family:
+                "DM Serif Display",
+                serif;
+
+            font-size: 22px;
+
+            color: #c46c96;
+
+            margin-bottom: 20px;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================================================
+   TYPED MESSAGE
+========================================================= */
+
+        #typedMessage {
+
+            font-family:
+                "Poppins",
+                sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            color: #665861;
+
+            flex: 1;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================================
+   SIGNATURE
+========================================================= */
+
+        .signature {
+
+            margin-top: 16px;
+
+            font-family:
+                "DM Serif Display",
+                serif;
+
+            font-size: 18px;
+
+            line-height: 1.35;
+
+            color: #a75b7d;
+
+            opacity: 0;
+
+            transform:
+                translateY(10px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+
+            flex-shrink: 0;
+        }
+
+        .signature.show {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =========================================================
+   ENVELOPE FRONT
+========================================================= */
+
+        .envelope-front {
+
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 0;
+            height: 0;
+
+            border-left:
+                160px solid transparent;
+
+            border-right:
+                160px solid transparent;
+
+            border-bottom:
+                110px solid #edbad2;
+
+            z-index: 4;
+        }
+
+
+        /* =========================================================
+   ENVELOPE FLAP
+========================================================= */
+
+        .envelope-flap {
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 0;
+            height: 0;
+
+            border-left:
+                160px solid transparent;
+
+            border-right:
+                160px solid transparent;
+
+            border-top:
+                110px solid #d895b8;
+
+            transform-origin:
+                top center;
+
+            transition:
+                transform 1s cubic-bezier(.2, .8, .2, 1);
+
+            z-index: 6;
+        }
+
+
+        /* =========================================================
+   HEART SEAL
+========================================================= */
+
+        .heart-seal {
+
+            position: absolute;
+
+            left: 50%;
+            top: 93px;
+
+            transform:
+                translateX(-50%);
+
+            width: 54px;
+            height: 54px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(circle at 35% 30%,
+                    #ffb4d6,
+                    #e94f91);
+
+            color: white;
+
+            font-size: 23px;
+
+            cursor: pointer;
+
+            z-index: 10;
+
+            box-shadow:
+                0 0 0 6px rgba(255, 255, 255, .15),
+
+                0 8px 25px rgba(220, 60, 130, .4);
+
+            transition: .35s;
+
+            animation:
+                sealPulse 2s infinite;
+        }
+
+        .heart-seal:hover {
+
+            transform:
+                translateX(-50%) scale(1.12);
+        }
+
+        @keyframes sealPulse {
+
+            0%,
+            100% {
+                box-shadow:
+                    0 0 0 6px rgba(255, 255, 255, .12),
+
+                    0 8px 25px rgba(220, 60, 130, .4);
+            }
+
+            50% {
+                box-shadow:
+                    0 0 0 12px rgba(255, 255, 255, .03),
+
+                    0 8px 35px rgba(220, 60, 130, .7);
+            }
+        }
+
+
+        /* =========================================================
+   OPEN STATE
+========================================================= */
+
+        .special-envelope.open {
+
+            animation: none;
+        }
+
+        .special-envelope.open .envelope-flap {
+
+            transform:
+                rotateX(180deg);
+
+            z-index: 3;
+        }
+
+        .special-envelope.open .special-paper {
+
+            transform:
+                translateY(-245px);
+
+            opacity: 1;
+
+            z-index: 8;
+        }
+
+        .special-envelope.open .heart-seal {
+
+            opacity: 0;
+
+            transform:
+                translateX(-50%) scale(0);
+
+            pointer-events: none;
+        }
+
+        .special-envelope.open .envelope-glow {
+
+            opacity: .4;
+
+            transform: scale(1.3);
+        }
+
+
+        /* =========================================================
+   TAP TEXT
+========================================================= */
+
+        .tap-text {
+
+            color: #8e8999;
+
+            font-size: 13px;
+
+            transition: .5s;
+        }
+
+        .tap-text.opened {
+
+            opacity: 0;
+
+            transform:
+                translateY(10px);
+        }
+
+
+        /* =========================================================
+   MUSIC
+========================================================= */
+
+        #music {
+
+            padding: 100px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .music-card {
+
+            width: min(440px, 100%);
+
+            padding: 35px;
+
+            border:
+                1px solid rgba(255, 255, 255, .1);
+
+            background:
+                rgba(255, 255, 255, .04);
+
+            border-radius: 28px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, .25);
+        }
+
+        .music-label {
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            color: #d9a6c3;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .album {
+
+            width: 230px;
+            height: 230px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            display: block;
+
+            margin: auto;
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, .5);
+        }
+
+        .music-card h3 {
+
+            margin-top: 25px;
+
+            font-size: 20px;
+        }
+
+        .music-card small {
+
+            color: #8f8b9c;
+        }
+
+        .progress {
+
+            width: 100%;
+
+            margin:
+                25px 0 15px;
+
+            accent-color: #e99bc2;
+        }
+
+        .play-btn {
+
+            width: 58px;
+            height: 58px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: white;
+
+            color: #090714;
+
+            cursor: pointer;
+
+            font-size: 17px;
+
+            transition: .3s;
+        }
+
+        .play-btn:hover {
+
+            transform:
+                scale(1.08);
+        }
+
+
+        /* =========================================================
+   FINAL
+========================================================= */
+
+        #final {
+
+            padding: 40px 20px;
+
+            text-align: center;
+        }
+
+        .final-content {
+
+            width: min(800px, 100%);
+        }
+
+        .countdown {
+
+            font-family:
+                "DM Serif Display",
+                serif;
+
+            font-size:
+                clamp(80px, 15vw, 150px);
+
+            color: #f1a5ca;
+
+            animation:
+                countdownPulse 1s infinite;
+        }
+
+        @keyframes countdownPulse {
+
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        .final-content h2 {
+
+            font-family:
+                "DM Serif Display",
+                serif;
+
+            font-weight: 400;
+
+            font-size:
+                clamp(50px, 10vw, 110px);
+
+            line-height: .95;
+        }
+
+        .final-text {
+
+            max-width: 570px;
+
+            margin:
+                30px auto 40px;
+
+            color: #aaa6b7;
+
+            line-height: 1.9;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+
+        /* =========================================================
+   CONFETTI
+========================================================= */
+
+        .confetti {
+
+            position: fixed;
+
+            width: 8px;
+            height: 13px;
+
+            top: -20px;
+
+            z-index: 100;
+
+            pointer-events: none;
+
+            animation:
+                fall 4s linear forwards;
+        }
+
+        @keyframes fall {
+
+            to {
+
+                transform:
+                    translateY(110vh) rotate(720deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================================================
+   FADE
+========================================================= */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================================================
+   MOBILE
+========================================================= */
+
+        @media(max-width:600px) {
+
+            .open-content h1 {
+                font-size: 52px;
+            }
+
+            .birthday-content h2 {
+                font-size: 70px;
+            }
+
+
+            /* Timeline */
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .memory,
+            .memory:nth-child(even) {
+
+                width: 100%;
+
+                margin-left: 0;
+
+                padding:
+                    30px 0 30px 35px;
+
+                text-align: left;
+            }
+
+            .memory-dot,
+            .memory:nth-child(odd) .memory-dot,
+            .memory:nth-child(even) .memory-dot {
+
+                left: 5px;
+                right: auto;
+            }
+
+            .memory-photo {
+                max-width: 100%;
+            }
+
+
+            /* Envelope */
+
+            .special-envelope {
+
+                width: 290px;
+                height: 195px;
+
+                margin:
+                    245px auto 70px;
+            }
+
+            .envelope-front {
+
+                border-left-width: 145px;
+                border-right-width: 145px;
+                border-bottom-width: 100px;
+            }
+
+            .envelope-flap {
+
+                border-left-width: 145px;
+                border-right-width: 145px;
+                border-top-width: 100px;
+            }
+
+
+            /* Letter */
+
+            .special-paper {
+
+                width: 260px;
+                height: 300px;
+
+                left: 15px;
+                top: 10px;
+
+                padding:
+                    24px 20px;
+            }
+
+            .special-envelope.open .special-paper {
+
+                transform:
+                    translateY(-220px);
+            }
+
+            .paper-top {
+
+                font-size: 20px;
+
+                margin-bottom: 18px;
+            }
+
+            #typedMessage {
+
+                font-size: 13px;
+
+                line-height: 1.65;
+            }
+
+            .signature {
+
+                font-size: 16px;
+            }
+
+
+            /* Music */
+
+            .music-card {
+                padding: 25px 18px;
+            }
+
+        }
+
+
+        /* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+        @media(max-width:360px) {
+
+            .open-content h1 {
+                font-size: 45px;
+            }
+
+            .birthday-content h2 {
+                font-size: 58px;
+            }
+
+            .special-envelope {
+                transform: scale(.9);
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =======================================================
+     STARS
+======================================================= -->
+
+    <div id="stars"></div>
+
+
+    <!-- =======================================================
+     OPENING
+======================================================= -->
+
+    <section id="opening" class="center">
+
+        <div class="open-content">
+
+            <div class="small-title">
+                A little surprise
+            </div>
+
+            <h1>
+                Hey...<br>
+                Wait a Second 👀
+            </h1>
+
+            <p>
+                I made something special for you.
+            </p>
+
+            <button class="primary-btn" onclick="enterSurprise()">
+                ✨ Enter the Surprise
+            </button>
+
+        </div>
+
+        <div class="scroll-hint">
+            ↓
+        </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+     BIRTHDAY
+======================================================= -->
+
+    <section id="birthday" class="center">
+
+        <div class="birthday-content">
+
+            <div class="birthday-label">
+                Today is your day
+            </div>
+
+            <h2>
+                HAPPY<br>
+                BIRTHDAY
+            </h2>
+
+            <!-- CHANGE NAME HERE -->
+
+            <div class="birthday-name">
+                Mafia ✨
+            </div>
+
+            <p class="birthday-description">
+
+                Today isn't just another day.
+
+                It's a reminder of all the
+                beautiful moments, laughter
+                and memories that make you special.
+
+                And this little website is
+                just one more memory to keep. ♡
+
+            </p>
+
+            <button class="primary-btn" onclick="
+                document
+                .getElementById('memories')
+                .scrollIntoView({
+                    behavior:'smooth'
+                })
+            ">
+                Explore the Memories ↓
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+     MEMORIES
+======================================================= -->
+
+    <section id="memories">
+
+        <div class="section-heading">
+
+            <span>
+                Little Thing
+            </span>
+
+            <h2>
+                Just a Little About You
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="memory">
+
+                <div class="memory-dot"></div>
+
+                <img class="memory-photo" src="/images/Mehee1.jpg" alt="Memory 1">
+
+                <h3>
+                    Topper apuuu
+                </h3>
+
+                <p>
+                    “The legendary Topper Apu of our class—always serving good grades, smart answers, and main-character
+                    energy. 📚✨”
+                </p>
+
+            </div>
+
+
+
+            <div class="memory">
+
+                <div class="memory-dot"></div>
+
+                <img class="memory-photo" src="/images/Mehee2.jpg" alt="Memory 2">
+
+                <h3>
+                    The Gang Leader and The Loyal Gang Member 🤣🤯
+                </h3>
+
+                <p>
+                    The one who runs the gang and the one who somehow 
+                    always ends up following along. 🤣🤯
+
+                </p>
+
+            </div>
+
+
+
+            <div class="memory">
+
+                <div class="memory-dot"></div>
+
+                <img class="memory-photo" src="/images/Mehee3.jpg" alt="Memory 3">
+
+                <h3>
+                    “She looks like she owns the whole city 💀”
+                </h3>
+
+                <p>
+                    She carries herself like she owns the whole city, with 
+                    that unstoppable boss energy. 💀
+
+                </p>
+
+            </div>
+
+
+
+            <div class="memory">
+
+                <div class="memory-dot"></div>
+
+                <img class="memory-photo" src="/images/Mehee4.jpg" alt="Memory 4">
+
+                <h3>
+                    Argentina supporter in every life 🇦🇷💙
+                </h3>
+
+                <p>
+                    The passionate Argentina supporter who brings that fiery spirit to everything they do. 🇦🇷💙
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+     SPECIAL LETTER
+======================================================= -->
+
+    <section id="letter">
+
+        <div class="letter-area">
+
+            <div class="letter-label">
+                ✦ A SECRET FOR YOU ✦
+            </div>
+
+            <h2>
+                One More Thing...
+            </h2>
+
+            <p class="letter-subtitle">
+                There's something waiting for you.
+            </p>
+
+
+            <div class="letter-particles">
+
+                <span>✦</span>
+                <span>♡</span>
+                <span>✦</span>
+                <span>♡</span>
+                <span>✧</span>
+
+            </div>
+
+
+
+            <!-- ENVELOPE -->
+
+            <div class="special-envelope" id="specialEnvelope">
+
+                <div class="envelope-glow"></div>
+
+
+                <!-- LETTER -->
+
+                <div class="special-paper">
+
+                    <div class="paper-content">
+
+                        <div class="paper-top">
+                            For You ♡
+                        </div>
+
+                        <div id="typedMessage"></div>
+
+                        <div class="signature" id="signature">
+                            With love,<br>
+                            <strong>
+                                Ishtiyaque
+                            </strong>
+                            ♡
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ENVELOPE -->
+
+                <div class="envelope-back"></div>
+
+                <div class="envelope-front"></div>
+
+                <div class="envelope-flap"></div>
+
+
+                <!-- HEART -->
+
+                <button class="heart-seal" onclick="openSpecialLetter()">
+                    ♥
+                </button>
+
+            </div>
+
+
+            <p class="tap-text" id="tapText">
+                Tap the heart to open your letter ♡
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+     MUSIC
+======================================================= -->
+
+    <section id="music">
+
+        <div class="music-card">
+
+            <div class="music-label">
+                A Song For You
+            </div>
+
+            <img class="album" src="music-cover.jpg" alt="Music Cover">
+
+            <h3>
+                Your Special Song 🎵
+            </h3>
+
+            <small>
+                A little music for this moment
+            </small>
+
+            <audio id="audio">
+
+                <source src="birthday-song.mp3" type="audio/mpeg">
+
+            </audio>
+
+            <input class="progress" id="progress" type="range" value="0" min="0" step="1">
+
+            <div>
+
+                <button class="play-btn" id="playBtn" onclick="toggleMusic()">
+                    ▶
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+     FINAL
+======================================================= -->
+
+    <section id="final" class="center">
+
+        <div class="final-content">
+
+            <div class="countdown" id="countdown">
+                3
+            </div>
+
+            <h2 id="finalTitle" class="hidden">
+                HAPPY BIRTHDAY Mafia! 🎉
+            </h2>
+
+            <p id="finalText" class="final-text hidden">
+
+                May this new year of your life
+                bring you happiness, peace,
+                success and countless beautiful
+                memories.
+
+                <br><br>
+
+                Keep smiling. Keep shining.
+                And never stop being yourself. ❤️
+
+            </p>
+
+            <button id="finalButton" class="primary-btn hidden" onclick="location.reload()">
+                ❤️ Replay Surprise
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <script>
+
+        /* =========================================================
+           STARS
+        ========================================================= */
+
+        const starsContainer =
+            document.getElementById("stars");
+
+        for (let i = 0; i < 120; i++) {
+
+            const star =
+                document.createElement("div");
+
+            star.className = "star";
+
+            star.style.left =
+                Math.random() * 100 + "%";
+
+            star.style.top =
+                Math.random() * 100 + "%";
+
+            star.style.animationDelay =
+                Math.random() * 3 + "s";
+
+            star.style.animationDuration =
+                (2 + Math.random() * 3) + "s";
+
+            starsContainer.appendChild(star);
+        }
+
+
+        /* =========================================================
+           ENTER
+        ========================================================= */
+
+        function enterSurprise() {
+
+            document
+                .getElementById("birthday")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+        }
+
+
+        /* =========================================================
+           SPECIAL LETTER
+        ========================================================= */
+
+        const specialMessage =
+            `I just wanted to leave you
+a little something special today.
+
+I hope this birthday brings you
+many reasons to smile, lots of
+beautiful moments and memories
+that stay with you forever.
+
+Keep being the amazing person
+you are. ♡`;
+
+
+        let letterOpened = false;
+
+
+        function openSpecialLetter() {
+
+            if (letterOpened)
+                return;
+
+            letterOpened = true;
+
+
+            const envelope =
+                document.getElementById(
+                    "specialEnvelope"
+                );
+
+            const tapText =
+                document.getElementById(
+                    "tapText"
+                );
+
+            const message =
+                document.getElementById(
+                    "typedMessage"
+                );
+
+            const signature =
+                document.getElementById(
+                    "signature"
+                );
+
+
+            envelope.classList.add("open");
+
+            tapText.classList.add("opened");
+
+
+            /* Type the letter */
+
+            setTimeout(() => {
+
+                typeMessage(
+                    message,
+                    specialMessage,
+                    25
+                );
+
+            }, 900);
+
+
+            /* Show signature */
+
+            setTimeout(() => {
+
+                signature.classList.add("show");
+
+                createLetterHearts();
+
+            }, 7000);
+
+        }
+
+
+        /* =========================================================
+           TYPEWRITER
+        ========================================================= */
+
+        function typeMessage(
+            element,
+            text,
+            speed
+        ) {
+
+            let index = 0;
+
+
+            function type() {
+
+                if (index < text.length) {
+
+                    const character =
+                        text.charAt(index);
+
+
+                    if (character === "\n") {
+
+                        element.innerHTML +=
+                            "<br>";
+
+                    } else {
+
+                        element.innerHTML +=
+                            character;
+
+                    }
+
+
+                    index++;
+
+
+                    setTimeout(
+                        type,
+                        speed
+                    );
+
+                }
+
+            }
+
+
+            type();
+
+        }
+
+
+        /* =========================================================
+           HEARTS
+        ========================================================= */
+
+        function createLetterHearts() {
+
+            for (let i = 0; i < 20; i++) {
+
+                const heart =
+                    document.createElement("div");
+
+
+                heart.innerHTML =
+                    Math.random() > .5
+                        ? "♡"
+                        : "♥";
+
+
+                heart.style.position = "fixed";
+
+                heart.style.left =
+                    (35 + Math.random() * 30) + "%";
+
+                heart.style.bottom = "35%";
+
+                heart.style.fontSize =
+                    (12 + Math.random() * 14) + "px";
+
+                heart.style.color = "#f2a4c8";
+
+                heart.style.pointerEvents = "none";
+
+                heart.style.zIndex = "100";
+
+                heart.style.transition =
+                    "transform 3s ease, opacity 3s ease";
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+                requestAnimationFrame(() => {
+
+                    heart.style.transform =
+                        `translate(
+                    ${(Math.random() - .5) * 300}px,
+                    -${100 + Math.random() * 250}px
+                )`;
+
+                    heart.style.opacity = "0";
+
+                });
+
+
+                setTimeout(() => {
+
+                    heart.remove();
+
+                }, 3200);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           MUSIC
+        ========================================================= */
+
+        const audio =
+            document.getElementById("audio");
+
+        const playBtn =
+            document.getElementById("playBtn");
+
+        const progress =
+            document.getElementById("progress");
+
+
+        audio.addEventListener(
+            "loadedmetadata",
+            () => {
+                progress.max =
+                    audio.duration;
+            }
+        );
+
+
+        audio.addEventListener(
+            "timeupdate",
+            () => {
+                progress.value =
+                    audio.currentTime;
+            }
+        );
+
+
+        progress.addEventListener(
+            "input",
+            () => {
+                audio.currentTime =
+                    progress.value;
+            }
+        );
+
+
+        audio.addEventListener(
+            "ended",
+            () => {
+                playBtn.textContent = "▶";
+            }
+        );
+
+
+        function toggleMusic() {
+
+            if (audio.paused) {
+
+                audio.play();
+
+                playBtn.textContent = "❚❚";
+
+            } else {
+
+                audio.pause();
+
+                playBtn.textContent = "▶";
+
+            }
+
+        }
+
+
+        /* =========================================================
+           FINAL COUNTDOWN
+        ========================================================= */
+
+        let countdownStarted = false;
+
+
+        const finalSection =
+            document.getElementById("final");
+
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting &&
+                            !countdownStarted
+                        ) {
+
+                            countdownStarted = true;
+
+                            startCountdown();
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: .5
+                }
+            );
+
+
+        observer.observe(finalSection);
+
+
+        function startCountdown() {
+
+            const counter =
+                document.getElementById(
+                    "countdown"
+                );
+
+
+            let number = 3;
+
+            counter.textContent = number;
+
+
+            const interval =
+                setInterval(() => {
+
+                    number--;
+
+
+                    if (number > 0) {
+
+                        counter.textContent =
+                            number;
+
+                    } else {
+
+                        clearInterval(interval);
+
+
+                        counter.classList.add(
+                            "hidden"
+                        );
+
+
+                        document
+                            .getElementById(
+                                "finalTitle"
+                            )
+                            .classList.remove(
+                                "hidden"
+                            );
+
+
+                        document
+                            .getElementById(
+                                "finalText"
+                            )
+                            .classList.remove(
+                                "hidden"
+                            );
+
+
+                        document
+                            .getElementById(
+                                "finalButton"
+                            )
+                            .classList.remove(
+                                "hidden"
+                            );
+
+
+                        createConfetti();
+
+                    }
+
+                }, 1000);
+
+        }
+
+
+        /* =========================================================
+           CONFETTI
+        ========================================================= */
+
+        function createConfetti() {
+
+            for (let i = 0; i < 120; i++) {
+
+                const piece =
+                    document.createElement("div");
+
+
+                piece.className = "confetti";
+
+
+                piece.style.left =
+                    Math.random() * 100 + "vw";
+
+
+                piece.style.animationDelay =
+                    Math.random() * 2 + "s";
+
+
+                piece.style.background =
+                    `hsl(
+                ${Math.random() * 360},
+                80%,
+                70%
+            )`;
+
+
+                piece.style.transform =
+                    `rotate(
+                ${Math.random() * 360}deg
+            )`;
+
+
+                document.body.appendChild(
+                    piece
+                );
+
+
+                setTimeout(() => {
+
+                    piece.remove();
+
+                }, 6000);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
